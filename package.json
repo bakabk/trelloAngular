@@ -1,0 +1,22 @@
+{
+  "name": "trelloangular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakabk/trelloAngular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bakabk/trelloAngular/issues"
+  },
+  "homepage": "https://github.com/bakabk/trelloAngular#readme",
+  "dependencies": {
+    "angular": "^1.7.0"
+  }
+}
