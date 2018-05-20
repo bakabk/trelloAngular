@@ -1,4 +1,4 @@
-angular.module('app').factory('listFactory', function(){
+angular.module('app').factory('listFactory', function () {
     var service = {}
 
     var lists = [
@@ -16,8 +16,21 @@ angular.module('app').factory('listFactory', function(){
         }
     ];
 
-    service.getLists = function(){
+    service.getLists = function () {
         return lists
+    }
+
+    service.addList = function (listName) {
+        lists.push({
+            id: _.uniqueId('list_'),
+            listName: listName
+
+        })
+    }
+
+    service.removeList = function(list){
+        console.log('del', list)
+        _.pull(lists, list)
     }
 
     return service
