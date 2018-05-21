@@ -26,8 +26,8 @@
 
     <div class="row">
         <section class="list list-inline"
-        ng-repeat="list in listsCtrl.lists"
-        ng-controller="listsCtrl as listsCtrl">
+                ng-repeat="list in listsCtrl.lists"
+                ng-controller="listCtrl as listCtrl">
             <h1>{{list.listName}}</h1>
 
             <a ng-click="listCtrl.removeList(list)" class="hand">

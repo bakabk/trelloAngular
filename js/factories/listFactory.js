@@ -29,7 +29,6 @@ angular.module('app').factory('listFactory', function () {
     }
 
     service.removeList = function(list){
-        console.log('del', list)
         _.pull(lists, list)
     }
 
