@@ -4,7 +4,7 @@ angular.module('app').controller('listCtrl', function(listFactory, cardFactory){
     }
 
     this.createCard = function(list){
-        cardFactory.createCard(list, this.cardDescriptiongit )
+        cardFactory.createCard(list, this.cardDescription )
         this.cardDescription = ''
     }
 })
