@@ -1,34 +1,47 @@
-angular.module('app').factory('cardFactory', function(){
- var service = {}
+angular.module('app').factory('cardFactory', function () {
+    var service = {}
 
- var cards = [
-     {
-         id: 1,
-         description: 'Fix bug in player',
-         list_id: 1
-     },
-     {
-         id: 2,
-         description: 'Add future with ...',
-         list_id: 1
-     },
-     {
-         id: 3,
-         description: 'Learn angular ...',
-         list_id: 3
-     }
- ]
+    var cards = [
+        {
+            id: 1,
+            description: 'Fix bug in player',
+            list_id: 1
+        },
+        {
+            id: 2,
+            description: 'Add future with ...',
+            list_id: 1
+        },
+        {
+            id: 3,
+            description: 'Learn angular ...',
+            list_id: 3
+        }
+    ]
 
-    service.getCards = function(list){
-        return _.filter(cards, {list_id: list.id} )
+    service.getCards = function (list) {
+        return _.filter(cards, {list_id: list.id})
     }
 
-    service.createCard = function(list, cardDescription){
+    service.createCard = function (list, cardDescription) {
         cards.push({
             id: _.uniqueId('card_'),
             description: cardDescription,
             list_id: list.id
         })
+    }
+
+    service.deleteCard = function (card) {
+        return _.pull(cards, card)
+    }
+
+    service.editCard = function (card) {
+        return card
+    }
+
+    service.updateCard = function (updatingCard) {
+        var card = _.find(cards, {id: updatingCard.id})
+        card.description = updatingCard.description
     }
 
     return service;
